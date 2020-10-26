@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 
-class Count extends Component {
+class Counter extends Component {
 
     constructor(props) {
         super(props);
         this.state = {number : 0};
     }
     
+    componentWillUnmount() {
+        this.props.addToSum(this.state.number * -1);
+    }
 
     onIncrease = () => {
-        this.setState((prevState) => ({number : prevState.number + 1}));
+        this.setState((prevState) => ({number : prevState.number + 1}), () => this.props.addToSum(1));
     }
 
     onDecrease = () => {
-        this.setState((prevState) => ({number : prevState.number - 1}));
+        this.setState((prevState) => ({number : prevState.number - 1}), () => this.props.addToSum(-1));
     }
 
     render() {
@@ -27,4 +30,4 @@ class Count extends Component {
     }
 }
 
-export default Count;
+export default Counter;
