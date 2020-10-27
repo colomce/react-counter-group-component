@@ -1,4 +1,4 @@
-import { combineReducer } from 'redux';
+import { combineReducers } from 'redux';
 
 const size = (state = 0, action) => {
     switch(action.type) {
@@ -10,6 +10,6 @@ const size = (state = 0, action) => {
     }
 }
 
-export default combineReducer({
+export default combineReducers({
     size
 });
