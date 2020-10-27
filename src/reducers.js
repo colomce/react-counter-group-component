@@ -16,6 +16,8 @@ const sum = (state = 0, action) => {
             return ++state;
         case "DECREASE_SUM" :
             return --state;
+        case "REVERT_SUM" :
+            return state += action.payload * -1;
         default:
             return state;
     }
