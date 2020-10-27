@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import { increaseSum } from '../action';
+import { increaseSum, decreaseSum } from '../action';
 import Counter from '../components/Counter';
 
 const mapDispatchToProps = (dispatch) => ({
-    increaseSum: () => {dispatch(increaseSum())}
+    increaseSum: () => {dispatch(increaseSum())},
+    decreaseSum: () => {dispatch(decreaseSum())}
 });
 
 const CounterContainer = connect(null, mapDispatchToProps)(Counter);
