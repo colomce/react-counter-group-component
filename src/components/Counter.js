@@ -8,7 +8,7 @@ class Counter extends Component {
     }
     
     componentWillUnmount() {
-        this.props.addToSum(this.state.number * -1);
+        this.props.revertSum(this.state.number);
     }
 
     onIncrease = () => {
