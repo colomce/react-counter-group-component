@@ -5,3 +5,7 @@ export const updateCounterSize = (size) => {
 export const increaseSum = () => {
     return {type: "INCREASE_SUM"};
 }
+
+export const decreaseSum = () => {
+    return {type: "DECREASE_SUM"};
+}
