@@ -10,6 +10,17 @@ const size = (state = 0, action) => {
     }
 }
 
+const sum = (state = 0, action) => {
+    switch(action.type) {
+        case "INCREASE_SUM" :
+            return ++state;
+
+        default:
+            return state;
+    }
+}
+
 export default combineReducers({
-    size
+    size,
+    sum
 });
